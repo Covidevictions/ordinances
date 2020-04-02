@@ -35,15 +35,15 @@ $(document).ready(function(){
 });
    </script>
 <script id="cities-template" type="text/x-handlebars-template">
-<div class="container">
+<div class="container mt-5">
      <h1>Cities with Local Eviction Protections</h1>
-   <a href="#counties">Jump to Counties</a>
+    <div class="p-2"><a href="#counties">Jump to Counties</a></div>
 <ul class="list-group" id="myList">
 	{{#each this}}
 		<li  class="list-group-item item list-group-item-action">
 		  <h4>{{#if linkToOrdinance}} <a href="{{linkToOrdinance}}">{{/if}} {{city}}{{#if linkToOrdinance}}</a>{{/if}}</h4>
-		  <strong>Description: </strong>{{typeOfOrdinance}}<br>
-            <strong>Effective Dates: </strong>{{effectiveDates}}
+		     {{#if typeOfOrdinance}} <strong>Description: </strong>{{typeOfOrdinance}}<br>{{/if}}
+            {{#if effectiveDates}}<strong>Effective Dates: </strong>{{effectiveDates}}{{/if}}
 		</li>
 	{{/each}}
 </ul>
